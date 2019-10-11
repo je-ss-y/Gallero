@@ -5,8 +5,6 @@ import datetime as dt
 
 # Create your views here.
 
-def welcome(request):
-    return render(request, 'welcome.html')
 
 
 def pictures_of_day(request):
