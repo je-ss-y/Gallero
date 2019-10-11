@@ -13,3 +13,10 @@ class Category(models.Model):
         class Meta:
         ordering = ['category_name']
 
+
+class Location(models.Model):
+    location_name = models.CharField(max_length =30)
+
+    def __str__(self):
+        return self.name
+
