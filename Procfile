@@ -1,0 +1,1 @@
+web: gunicorn gallero.wsgi --log-file -
