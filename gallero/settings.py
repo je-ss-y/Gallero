@@ -23,9 +23,9 @@ if config('MODE')=="dev":
    DATABASES = {
        'default': {
            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': config('journey'),
-           'USER': config('wecode'),
-           'PASSWORD': config('passiwadi'),
+           'NAME': config('DB_NAME'),
+           'USER': config('DB_USER'),
+           'PASSWORD': config('DB_PASSWORD'),
            'HOST': config('DB_HOST'),
            'PORT': '',
        }
@@ -109,14 +109,14 @@ WSGI_APPLICATION = 'gallero.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'journey',
-        'USER': 'wecode',
-        'PASSWORD':'passiwadi',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'journey',
+#         'USER': 'wecode',
+#         'PASSWORD':'passiwadi',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
