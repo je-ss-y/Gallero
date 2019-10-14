@@ -48,8 +48,8 @@ def search_results(request):
 
 
 
-def filter_by_location(request, id):
-        location = Location.objects.all()
-        pictures = Image.objects.filter(location__id=id)
-        return render(request, "location.html",{'pictures':pictures,'location':location})
+# def filter_by_location(request, id):
+#         location = Location.objects.all()
+#         pictures = Image.objects.filter(location__id=id)
+#         return render(request, "location.html",{'pictures':pictures,'location':location})
 
