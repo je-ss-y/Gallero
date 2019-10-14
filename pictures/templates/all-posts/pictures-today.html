@@ -3,12 +3,13 @@
 {{ block.super}}
 
 <div class="container">
-  
+ 
 
   <!-- Looping through pictures  -->
   {% for picture_item in pictures %}
 
   <div class="row">
+  
     <div class="col-md-4" data-toggle="modal" data-target="#{{picture_item.id}}">
     
       <img src="{{picture_item.image.url}}" class="img-responsive" alt="Image">
@@ -42,7 +43,7 @@
     <h2 class="text-center">There No Pitures</h2>
   </div>
   {% endfor %}
+</div>
+</div>
 
-</div>
-</div>
 {% endblock %}
