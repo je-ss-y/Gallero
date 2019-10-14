@@ -3,17 +3,12 @@
 {{ block.super}}
 
 <div class="container">
+  
 
-  <!-- Looping through news   -->
+  <!-- Looping through pictures  -->
   {% for picture_item in pictures %}
 
   <div class="row">
-    <!-- displaying News articles
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <h2 class="text-center"> {{ picture_item.image }} </h2>
-      <h2 class="text-center"> {{ picture_item.image_description }} </h2>
-    </div> -->
-    <!--Display news Article images  -->
     <div class="col-md-4" data-toggle="modal" data-target="#{{picture_item.id}}">
     
       <img src="{{picture_item.image.url}}" class="img-responsive" alt="Image">
