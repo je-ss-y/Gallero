@@ -23,9 +23,9 @@ if config('MODE')=="dev":
    DATABASES = {
        'default': {
            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': config('DB_NAME'),
-           'USER': config('DB_USER'),
-           'PASSWORD': config('DB_PASSWORD'),
+           'NAME': config('journey'),
+           'USER': config('wecode'),
+           'PASSWORD': config('passiwadi'),
            'HOST': config('DB_HOST'),
            'PORT': '',
        }
@@ -52,7 +52,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!j_=s@0hj31==x9u&1s*u^_hpt3*qf6r5gi8r6hw*$rr1^c37a'
+SECRET_KEY='!j_=s@0hj31==x9u&1s*u^_hpt3*qf6r5gi8r6hw*$rr1^c37a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -109,14 +109,14 @@ WSGI_APPLICATION = 'gallero.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'journey',
-        'USER': 'wecode',
-        'PASSWORD':'passiwadi',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'journey',
+#         'USER': 'wecode',
+#         'PASSWORD':'passiwadi',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
