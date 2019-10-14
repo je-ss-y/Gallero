@@ -15,3 +15,11 @@
  * PostgreSQL
  * Django
  * Python
+
+ ### Known bugs
+
+* no known bugs
+
+### License 
+
+* This product is strictly for educational purpose
