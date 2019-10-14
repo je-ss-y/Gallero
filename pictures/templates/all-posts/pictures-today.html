@@ -1,5 +1,53 @@
 {%extends 'all-posts/base.html'%}
+{% block content %} 
+{{ block.super}}
 
-{% block content %}
-{{block.super}}
+<div class="container">
+
+  <!-- Looping through news   -->
+  {% for picture_item in pictures %}
+
+  <div class="row">
+    <!-- displaying News articles
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <h2 class="text-center"> {{ picture_item.image }} </h2>
+      <h2 class="text-center"> {{ picture_item.image_description }} </h2>
+    </div> -->
+    <!--Display news Article images  -->
+    <div class="col-md-4" data-toggle="modal" data-target="#{{picture_item.id}}">
+    
+      <img src="{{picture_item.image.url}}" class="img-responsive" alt="Image">
+    </div>
+
+
+    <div class="modal fade modal-profile" tabindex="-1" role="dialog" aria-labelledby="modalProfile" id="{{picture_item.id}}" aria-hidden="true" data-dismiss="modal">
+      <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                  <div class="modal-header">
+                      <img src="{{picture_item.image.url}}" alt="" width="300" height='250'>
+                        <h3 class="modal-title">{{picture_item.image_name}}</h3>
+                  </div>
+                  <div class="modal-body" >
+<p>Name: {{picture_item.image_name}}</p>
+<p>Description: {{picture_item.image_description}}</p>
+<p>category: {{picture_item.category}}</p>
+<p>location: {{picture_item.location}}</p>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>
+</div>
+  </div>
+
+    </div>
+  
+
+  {% empty %}
+  <div class="row">
+    <h2 class="text-center">There No Pitures</h2>
+  </div>
+  {% endfor %}
+
+</div>
+</div>
 {% endblock %}

@@ -1,0 +1,27 @@
+{%extends 'all-posts/base.html'%} 
+{% block content %}
+<div class="row container-fluid content">
+  <div class="col-md-4">
+    <h1 class="mt-5">Location:</h1>
+    {% for picture_item in pictures %}
+      <h1 class="ml-5">{{picture_item.location}}</h1>
+    {% endfor %}
+  </div>
+  <div class="col-md-4">
+    <div class="card mt-3">
+      {% if pictures %}
+        {% for picture_item in pictures  %}
+        <img src="{{picture_item.img.url}}" alt="" width="300" height='250'>
+        <p>{{picture_item.name}}</p>
+        <p>{{picture_item.description}}</p>
+        <p>{{picture_item.category}}</p>
+        {% endfor %}
+      {% else %}
+        <p>No image with that location </p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+

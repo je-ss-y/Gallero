@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http  import HttpResponse,Http404
 import datetime as dt
+from .models import Image,Category,Location
 
 
 # Create your views here.
@@ -9,7 +10,8 @@ import datetime as dt
 
 def pictures_of_day(request):
     date = dt.date.today()
-    return render(request, 'all-posts/pictures-today.html', {"date": date,})
+    pictures = Image.objects.all()
+    return render(request, 'all-posts/pictures-today.html', {"date": date,"pictures":pictures})
 
 
 
@@ -31,4 +33,23 @@ def past_days_pictures(request, past_date):
     return render(request, 'all-posts/past-pictures.html', {"date": date})
 
 
+def search_results(request):
+
+    if 'image' in request.GET and request.GET["image"]:
+        search_term = request.GET.get("image")
+        searched_images = Image.search_by_category(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html',{"message":message,"searched_images": searched_images})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',{"message":message})
+
+
+
+def filter_by_location(request, id):
+        location = Location.objects.all()
+        pictures = Image.objects.filter(location__id=id)
+        return render(request, "location.html",{'pictures':pictures,'location':location})
 

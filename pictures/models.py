@@ -30,6 +30,13 @@ class Location(models.Model):
 class Image(models.Model):
     image_name = models.CharField(max_length =30)
     image_description = models.TextField()
-    category = models.ForeignKey(Category)
+    category = models.ForeignKey(Category, db_column='category_name')
     location = models.ManyToManyField(Location)
+    image = models.ImageField(upload_to = 'imagepath/')
+
+
+    @classmethod
+    def search_by_category(cls,search_term):
+        pictures = cls.objects.filter(category__category_name__contains=search_term)
+        return pictures
 
