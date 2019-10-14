@@ -9,11 +9,12 @@
   {% for picture_item in pictures %}
 
   <div class="row">
-  
-    <div class="col-md-4" data-toggle="modal" data-target="#{{picture_item.id}}">
+    <div class="col-md-4 details" data-toggle="modal" data-target="#{{picture_item.id}}">
+      <div class="card" style="width:400px; padding:20px;">
     
-      <img src="{{picture_item.image.url}}" class="img-responsive" alt="Image">
+      <img style ="height:300px;width:350px"src="{{picture_item.image.url}}" class="img-responsive" alt="Image">
     </div>
+    
 
 
     <div class="modal fade modal-profile" tabindex="-1" role="dialog" aria-labelledby="modalProfile" id="{{picture_item.id}}" aria-hidden="true" data-dismiss="modal">
@@ -44,6 +45,6 @@
   </div>
   {% endfor %}
 </div>
-</div>
 
+</div>
 {% endblock %}

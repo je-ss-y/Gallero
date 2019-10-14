@@ -9,28 +9,13 @@ from .models import Image,Category,Location
 
 
 def pictures_of_day(request):
-    date = dt.date.today()
+
     pictures = Image.objects.all()
-    return render(request, 'all-posts/pictures-today.html', {"date": date,"pictures":pictures})
+    return render(request, 'all-posts/pictures-today.html', {"pictures":pictures})
 
 
 
 
-def past_days_pictures(request, past_date):
-
-    try:
-        # Converts data from the string Url
-        date = dt.datetime.strptime(past_date, '%Y-%m-%d').date()
-
-    except ValueError:
-        # Raise 404 error when ValueError is thrown
-        raise Http404()
-        assert False
-
-    if date == dt.date.today():
-        return redirect(news_of_day)
-
-    return render(request, 'all-posts/past-pictures.html', {"date": date})
 
 
 def search_results(request):
@@ -45,6 +30,14 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
+
+
+def onepic(request,pic_id):
+    try:
+        picture = Image.objects.get(id = pic_id)
+    except DoesNotExist:
+        raise Http404()
+    return render(request,"all-posts/onepic.html", {"picture":picture})
 
 
 

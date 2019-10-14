@@ -1,0 +1,28 @@
+{%extends 'all-posts/base.html'%}
+
+ {% block content %}
+
+ <div class="container">
+
+   <div class="row">
+        <img src="{{picture_item.image.url}}" alt="" width="400" height='350'>
+   </div>
+
+   <div class="row">
+     <h1 class="text-center">{{picture_item.image_name}}</h1>
+   </div>
+
+   <div class="row">
+     <p>{{picture_item.image_description}}</p>
+   </div>
+
+   <div class="row">
+     <p>Posted {{picture_item.category}}</p>
+   </div>
+
+   <div class="row">
+        <p>Posted {{picture_item.location}}</p>
+      </div>
+ </div>
+
+ {% endblock %}

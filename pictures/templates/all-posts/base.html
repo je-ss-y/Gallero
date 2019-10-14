@@ -20,7 +20,13 @@
 <body>
     {% include "navbar.html" %}
 
-    {% block content %} <h1 class='text-center'>Pictures for {{date|date:"l d-F Y"}}</h1> {%endblock%}
+    {% block content %} 
+    <div class ="jumbotron">
+      <h1 class='text-center' style= " color:#6c8baf;">Welcome  to Gallero</h1>
+      <h2 class='text-center'  style="font-size: 15px;"> A personal choice for what you see</h2>
+    </div>
+      
+      {%endblock%}
 
     {% block scripts %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
